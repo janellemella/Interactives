@@ -1,0 +1,43 @@
+h1 {
+    color: rgb(15, 2, 150);
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+body{
+    width:50%;
+    margin:auto;
+}
+
+#intro{
+    font-size: 1.5em;
+}
+
+#byline {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1em;
+}
+
+#article {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#gold {
+    color: rgb(229, 196, 11)
+}
+    
+#bronze {
+    color: brown
+}
+/*how to create borders to see what divs exist 
+div{
+    border: solid 1px gray
+
+} /*
+
+
+/* for phones */
+@media (orientation: portrait) {
+    body{
+        width: 100%;
+        font-size: 2em;
+    }
+}
