@@ -1,0 +1,64 @@
+<html>
+<head> 
+  <title>Northwestern Building Filter</title>
+  <style>
+    h1 {
+    color: rgb(2, 4, 150);
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+/*general styling for all filter buttons + button colors for each school*/
+    html, body { margin:0; padding:20px; height:100%; }
+    button { padding:10px 20px; margin:5px; font-size:18px; }
+    .medill { background:#f4a261; color:#ffffff; }
+    .mccormick  { background:#2a9d8f; color:#ffffff; }
+    .weinberg { background:#e76f51; color:#ffffff; }
+    /*general styling for each building box*/
+    .item {
+      padding:15px; margin:10px 0;
+      font-size:20px;
+      border-radius:20px;
+      font-family:cursive;
+    }
+    /*school-specific colors for building boxes*/
+    .medill.item { background:rgb(68, 189, 185); }
+    .mccormick.item  { background:rgb(63, 118, 177); }
+    .weinberg.item { background:rgb(26, 26, 116); }
+    /*hides buildings that don't match the chosen filter*/
+    .item.hidden { display:none; }
+  </style>
+</head>
+<body>
+  <h1> Click on each Northwestern school to see what buildings on campus house those classes</h1>
+  <!--the <button onclick function allows the user to click on filtered bbuttons that show only buildings from the selected school -->
+  <button onclick="filter('all')">All</button>
+  <button onclick="filter('medill')">Medill</button>
+  <button onclick="filter('mccormick')">McCormick</button>
+  <button onclick="filter('weinberg')">Weinberg</button>
+<!--divs are essentially tagging the building with the corresponding school category -->
+  <div class="item medill">Fisk Hall</div>
+  <div class="item medill">MFC</div>
+  <div class="item medill">Locy Hall</div>
+  
+  <div class="item mccormick">Tech</div>
+  <div class="item mccormick">Ford</div>
+  <div class="item mccormick">Mudd</div>
+  
+  <div class="item weinberg">Kresge Hall</div>
+  <div class="item weinberg">Harris Hall</div>
+  <div class="item weinberg">University Hall</div>
+
+  <script>
+    //the function makes the actual button work and filtres buildings based on the selected school category?
+    function filter(cat) {
+      let items = document.querySelectorAll('.item');
+      items.forEach(item => {
+        if (cat === 'all' || item.classList.contains(cat)) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
